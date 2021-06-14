@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{65B8D331-06D6-4B41-B0D3-2665D135B708}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Falcon</RootNamespace>
+    <AssemblyName>Falcon</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ConexcionBD">
+      <HintPath>..\..\ConexcionBD.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FalconDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FalconDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FalconDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FalconDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FalconDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FalconDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FalconDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FalconDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Patrones\Inactividad.cs" />
+    <Compile Include="Patrones\Botones_validados.cs" />
+    <Compile Include="Patrones\Textbox_Validados.cs" />
+    <Compile Include="Vistas\Modulo_usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Modulo_usuarios.Designer.cs">
+      <DependentUpon>Modulo_usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patrones\Acceso_Chain_of_responsability.cs" />
+    <Compile Include="Controlador\Controlador.cs" />
+    <Compile Include="FalconDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FalconDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FalconDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FalconDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FalconDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FalconDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FalconDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FalconDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FalconDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FalconDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Conexion.cs" />
+    <Compile Include="Modelo\Dto\ConsultaPruebas.cs" />
+    <Compile Include="Modelo\DaoConsultaPruebas.cs" />
+    <Compile Include="Patrones\Patrones_UX.cs" />
+    <Compile Include="Patrones\Singleton.cs" />
+    <Compile Include="Vistas\Paqueteria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Paqueteria.Designer.cs">
+      <DependentUpon>Paqueteria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Pruebas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Pruebas.Designer.cs">
+      <DependentUpon>Pruebas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Consultas_prueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Consultas_prueba.Designer.cs">
+      <DependentUpon>Consultas_prueba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Consultas_paquetería.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Consultas_paquetería.Designer.cs">
+      <DependentUpon>Consultas_paquetería.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Vistas\Modulo_usuarios.resx">
+      <DependentUpon>Modulo_usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Paqueteria.resx">
+      <DependentUpon>Paqueteria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Pruebas.resx">
+      <DependentUpon>Pruebas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Consultas_prueba.resx">
+      <DependentUpon>Consultas_prueba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Consultas_paquetería.resx">
+      <DependentUpon>Consultas_paquetería.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="FalconDataSet.xsc">
+      <DependentUpon>FalconDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FalconDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FalconDataSet.xss">
+      <DependentUpon>FalconDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet1.xsc">
+      <DependentUpon>FalconDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FalconDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FalconDataSet1.xss">
+      <DependentUpon>FalconDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet2.xsc">
+      <DependentUpon>FalconDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FalconDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FalconDataSet2.xss">
+      <DependentUpon>FalconDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet3.xsc">
+      <DependentUpon>FalconDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FalconDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FalconDataSet3.xss">
+      <DependentUpon>FalconDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet4.xsc">
+      <DependentUpon>FalconDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FalconDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FalconDataSet4.xss">
+      <DependentUpon>FalconDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet5.xsc">
+      <DependentUpon>FalconDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FalconDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FalconDataSet5.xss">
+      <DependentUpon>FalconDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet6.xsc">
+      <DependentUpon>FalconDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FalconDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FalconDataSet6.xss">
+      <DependentUpon>FalconDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet7.xsc">
+      <DependentUpon>FalconDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FalconDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FalconDataSet7.xss">
+      <DependentUpon>FalconDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet8.xsc">
+      <DependentUpon>FalconDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="FalconDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FalconDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FalconDataSet8.xss">
+      <DependentUpon>FalconDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\falcon-bnw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO-FALCON-01-300x300.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\falcon-bnw1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\falcon-bnw %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
